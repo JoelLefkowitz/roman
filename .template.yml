@@ -1,0 +1,44 @@
+output_dir: .
+
+clear_top_level: true
+logical_grouping: true
+
+collections:
+    - common
+    - purescript
+
+loader_paths:
+    - docs
+
+render_context:
+    project:
+        project_name: purescript-roman
+        version: 0.1.0
+
+        verbose_name: Purescript Roman
+        description: Convert between Roman numerals and base 10.
+
+        repository: https://github.com/JoelLefkowitz/purescript-roman
+        codacy_id: ec61f81349714facb1a2d53d317c77d6
+
+        inserts:
+            - usage.md
+
+    author:
+        author: Joel Lefkowitz
+        author_email: joellefkowitz@hotmail.com
+        author_github_handle: joellefkowitz
+
+    package:
+        is_pursuit_package: true
+        package_name: purescript-roman
+
+    portfolio:
+        is_portfolio: true
+        status_level: 1
+
+        languages:
+            - PureScript
+
+        paradigms:
+            - Functional programming
