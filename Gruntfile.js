@@ -2,7 +2,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         exec: {
             cspell: 'npx cspell -c .cspell.json ".*" "*" "**/*"',
-            purty: 'npx purty ./ --write',
+            purty: 'npx purty ./src --write',
             spagoTest: 'spago test',
             prettier: 'prettier . --write',
             quickdocs: 'quickdocs .quickdocs.yml',

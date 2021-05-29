@@ -1,13 +1,14 @@
 module Test.Utils where
 
 import Prelude
-
 import Data.Map (Map, fromFoldable)
 import Data.Maybe (Maybe(..))
 import Data.Tuple (Tuple(..))
 import Effect (Effect)
 import Test.Assert (assertEqual)
-import Utils (getKeys, getValues, largestLessThan, latestSatisfying, reverseLookup, trimStart)
+import Utils.Arrays (largestLessThan, latestSatisfying)
+import Utils.Maps (getKeys, getValues, reverseLookup)
+import Utils.Strings (trimStart)
 
 testUtils :: Effect Unit
 testUtils = do

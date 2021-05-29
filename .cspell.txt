@@ -137,6 +137,7 @@ fmarkdown
 fnda
 foistware
 foldl
+forall
 fortnite
 foss
 frame
@@ -262,6 +263,7 @@ mixamo
 mkdir
 mlock
 modindex
+monoid
 mosaic
 mouse grid
 move
@@ -281,6 +283,7 @@ nano
 narrator
 nedit
 negate
+newtype
 nextcloud
 ngsw
 nguniversal
@@ -407,6 +410,7 @@ scrapy
 sdir
 sdist
 seamonkey
+semigroup
 serializinghtml
 setuptools
 sharepoint
@@ -467,6 +471,7 @@ unarchive
 unbundled
 undelete
 undoc
+unfoldable
 unicode
 unimported
 unitless
