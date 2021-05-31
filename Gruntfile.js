@@ -1,10 +1,10 @@
 module.exports = function (grunt) {
     grunt.initConfig({
         exec: {
-            cspell: 'npx cspell -c .cspell.json ".*" "*" "**/*"',
-            purty: 'npx purty ./src --write',
-            spagoTest: 'spago test',
-            prettier: 'prettier . --write',
+            cspell: 'npx cspell ".*" "*" "**/*"',
+            purty: 'for i in src test; do npx purty ./$i --write; done',
+            nyc: 'nyc --clean -x ".spago/**" -x "**/foreign.js" -e ".purs" spago test --purs-args "-g sourcemaps"',
+            prettier: 'prettier . --write --ignore-path .gitignore',
             quickdocs: 'quickdocs .quickdocs.yml',
             remark: 'npx remark -r .remarkrc .',
             sphinx: 'sphinx-build docs build',
@@ -25,7 +25,7 @@ module.exports = function (grunt) {
         ['prettier', 'purty'].map((i) => 'exec:'.concat(i))
     );
 
-    grunt.registerTask('tests:unit', 'Run unit tests', 'exec:spagoTest');
+    grunt.registerTask('tests:unit', 'Run unit tests', 'exec:nyc');
 
     grunt.registerTask(
         'docs:generate',

@@ -15,7 +15,7 @@ render_context:
         project_name: purescript-roman
         version: 0.1.0
 
-        verbose_name: Purescript Roman
+        verbose_name: PureScript Roman
         description: Convert between Roman numerals and base 10.
 
         repository: https://github.com/JoelLefkowitz/purescript-roman
@@ -31,11 +31,11 @@ render_context:
 
     package:
         is_pursuit_package: true
-        package_name: purescript-roman
+        package_name: roman
 
     portfolio:
         is_portfolio: true
-        status_level: 1
+        status_level: 2
 
         languages:
             - PureScript

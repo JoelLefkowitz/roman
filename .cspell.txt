@@ -75,6 +75,7 @@ crippleware
 crystalmark
 ctd
 cubase
+cxlv
 cygwin
 dart
 dataclasses
@@ -345,7 +346,6 @@ preprocessor
 prettierignore
 printshiv
 privmsg
-progid
 progid
 proglog
 psb

@@ -3,17 +3,18 @@
     "ignorePaths": [
         "./.cspell.txt",
         "./package-lock.json",
+        "./test/numerals.csv",
         ".gitignore",
         "*.coverage",
         "*.types",
         "**/__pycache__/**",
-        "**/*.csv",
         "**/*.egg-info/**",
         "**/build/**",
-        "**/output/**",
         "**/dist/**",
         "**/node_modules/**",
+        "**/output/**",
         "**/sqlite3",
+        "**/spago/**",
         "**/venv/**"
     ],
     "dictionaries": [

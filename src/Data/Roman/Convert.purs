@@ -1,14 +1,14 @@
-module Convert where
+module Data.Roman.Convert where
 
 import Prelude
 import Data.Array (cons, elem, foldl)
 import Data.Map (fromFoldable)
 import Data.Maybe (fromMaybe', fromMaybe)
+import Data.Roman.Symbols (SymbolsTable(..), getSymbols, getSymbolValues, lookupSymbol, reverseLookupSymbol)
 import Data.String.Utils (startsWith)
 import Data.Tuple (Tuple(..))
-import Symbols (SymbolsTable(..), getSymbols, getSymbolValues, lookupSymbol, reverseLookupSymbol)
-import Utils.Arrays (largestLessThan, latestSatisfying)
-import Utils.Strings (trimStart)
+import Data.Array.Search (largestLessThan, finalSatisfying)
+import Data.String.Repr (trimStart)
 
 symbolsTable :: SymbolsTable
 symbolsTable =
@@ -50,7 +50,7 @@ splitRoman x
   | elem x symbols = [ x ]
   | otherwise = cons chunk (splitRoman remainder)
     where
-    chunk = fromMaybe "" $ latestSatisfying symbols (\s -> startsWith s x)
+    chunk = fromMaybe "" $ finalSatisfying symbols (\s -> startsWith s x)
 
     remainder = trimStart chunk x
 

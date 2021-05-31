@@ -1,11 +1,11 @@
-module Symbols where
+module Data.Roman.Symbols where
 
 import Prelude
 import Data.Array (foldl)
 import Data.Map (Map, lookup, empty, union)
 import Data.Maybe (Maybe)
-import Utils.Strings (trimStart)
-import Utils.Maps (getKeys, getValues, reverseLookup)
+import Data.Map.Eager (keys, values, reverseLookup)
+import Data.String.Repr (trimStart)
 
 newtype SymbolsTable
   = SymbolsTable (Map String Int)
@@ -23,10 +23,10 @@ instance semigroupSymbolsTable :: Semigroup SymbolsTable where
   append (SymbolsTable x) (SymbolsTable y) = (SymbolsTable (union x y))
 
 getSymbols :: SymbolsTable -> Array String
-getSymbols (SymbolsTable symbolsTable) = getKeys symbolsTable
+getSymbols (SymbolsTable symbolsTable) = keys symbolsTable
 
 getSymbolValues :: SymbolsTable -> Array Int
-getSymbolValues (SymbolsTable symbolsTable) = getValues symbolsTable
+getSymbolValues (SymbolsTable symbolsTable) = values symbolsTable
 
 lookupSymbol :: String -> SymbolsTable -> Maybe Int
 lookupSymbol key (SymbolsTable symbolsTable) = lookup key symbolsTable

@@ -3,12 +3,11 @@ module Test.Convert where
 import Prelude
 import Data.Array (range, zip)
 import Data.Foldable (foldl)
+import Data.Roman.Convert (toRoman, fromRoman)
 import Data.String.Common (split)
 import Data.String.Pattern (Pattern(..))
 import Data.Tuple (Tuple(..))
 import Effect (Effect)
-import Effect.Console (log)
-import Convert (toRoman, fromRoman)
 import Node.Encoding (Encoding(..))
 import Node.FS.Sync (readTextFile)
 import Test.Assert (assertEqual)
@@ -29,10 +28,9 @@ loadNumerals = do
 testToRoman :: Effect Unit
 testToRoman = do
   numerals <- loadNumerals
-  chain
+  resolve
     $ do
         (Tuple x y) <- (zip numbers numerals)
-        a <- [ log (toRoman x) ]
         pure
           $ assertEqual
               { actual: toRoman x
@@ -42,7 +40,7 @@ testToRoman = do
 testFromRoman :: Effect Unit
 testFromRoman = do
   numerals <- loadNumerals
-  chain
+  resolve
     $ do
         (Tuple x y) <- (zip numbers numerals)
         pure
@@ -51,9 +49,9 @@ testFromRoman = do
               , expected: x
               }
 
-chain :: Array (Effect Unit) -> Effect Unit
-chain arr = foldl _chain mempty arr
+resolve :: Array (Effect Unit) -> Effect Unit
+resolve arr = foldl _resolve mempty arr
   where
-  _chain acc x = do
+  _resolve acc x = do
     _ <- acc
     x

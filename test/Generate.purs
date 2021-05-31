@@ -2,10 +2,10 @@ module Test.Generate where
 
 import Prelude
 import Data.Map (empty, fromFoldable)
+import Data.Roman.Generate (generateSymbolsTable)
+import Data.Roman.Symbols (SymbolsTable(..))
 import Data.Tuple (Tuple(..))
 import Effect (Effect)
-import Generate (generateSymbolsTable)
-import Symbols (SymbolsTable(..))
 import Test.Assert (assertEqual)
 
 testGenerate :: Effect Unit

@@ -3,9 +3,9 @@ module Test.Symbols where
 import Prelude
 import Data.Map (fromFoldable)
 import Data.Maybe (Maybe(..))
+import Data.Roman.Symbols (getSymbols, getSymbolValues, lookupSymbol, reverseLookupSymbol, SymbolsTable(..))
 import Data.Tuple (Tuple(..))
 import Effect (Effect)
-import Symbols (getSymbols, getSymbolValues, lookupSymbol, reverseLookupSymbol, SymbolsTable(..))
 import Test.Assert (assertEqual)
 
 testSymbols :: Effect Unit
