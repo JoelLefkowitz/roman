@@ -2,5 +2,5 @@ project: purescript-roman
 version: 0.1.0
 author: Joel Lefkowitz
 verbose_name: PureScript Roman
-html_title: PureScript Roman
+html_title: PureScript Roman 
 github_url: https://github.com/JoelLefkowitz/purescript-roman

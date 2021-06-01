@@ -3,7 +3,6 @@
     "ignorePaths": [
         "./.cspell.txt",
         "./package-lock.json",
-        "./test/numerals.csv",
         ".gitignore",
         "*.coverage",
         "*.types",
