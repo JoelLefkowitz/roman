@@ -7,21 +7,13 @@ node_js: 14.8.0
 before_install:
 
     # Install PureScript dependencies
-    - sudo apt-get install libncurses5
-    - sudo apt-get install haskell-stack
+    - sudo apt-get install libncurses5 libncurses5-dev
+    - sudo apt-get install libc6 libc6-dev
 
     # Download and extract the PureScript binary
-    - curl -L https://github.com/purescript/purescript/releases/download/v0.14.1/linux64.tar.gz --output linux64.tar.gz
-    - tar -xzf linux64.tar.gz --strip-components=1
-    
-    # - tar -xzf linux64.tar.gz purescript/purs --strip-components=1
-  
-    - stack update
-    - stack unpack purescript
-    - cd purescript-0.14.1  
-    - stack install --flag purescript:0.14.1
-    
-    # - sudo mv purs /usr/local/bin/purs
+    - curl -L https://github.com/purescript/purescript/releases/download/v0.14.1/linux64.tar.gz --output linux64.tar.gz    
+    - tar -xzf linux64.tar.gz purescript/purs --strip-components=1
+    - sudo mv purs /usr/local/bin/purs
     
     # Test the PureScript installation
     - purs --version
