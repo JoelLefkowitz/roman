@@ -1,12 +1,19 @@
-module Data.Roman.Symbols where
+module Data.Roman.Symbols
+  ( SymbolsTable(..)
+  , getSymbols
+  , getSymbolValues
+  , lookupSymbol
+  , reverseLookupSymbol
+  ) where
 
 import Prelude
-import Data.Array (foldl)
-import Data.Map (Map, lookup, empty, union)
-import Data.Maybe (Maybe)
-import Data.Map.Eager (keys, values, reverseLookup)
-import Data.String.Repr (trimStart)
 
+import Data.Map (Map, lookup, empty, union)
+import Data.Map.Eager (keys, values, reverseLookup)
+import Data.Maybe (Maybe)
+import Data.String.Repr (fmtShow)
+
+-- | `SymbolsTable` represents a mapping of Roman numerals to integer values
 newtype SymbolsTable
   = SymbolsTable (Map String Int)
 
@@ -14,7 +21,7 @@ instance eqSymbolsTable :: Eq SymbolsTable where
   eq (SymbolsTable x) (SymbolsTable y) = eq x y
 
 instance showSymbolsTable :: Show SymbolsTable where
-  show s = "Letters: [" <> (trimStart ", " $ foldl (\acc x -> acc <> ", " <> x) "" $ (getSymbols s)) <> "]"
+  show (SymbolsTable x) = fmtShow "["  ", " x "]"
 
 instance monoidSymbolsTable :: Monoid SymbolsTable where
   mempty = SymbolsTable empty

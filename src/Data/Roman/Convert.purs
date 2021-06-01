@@ -1,4 +1,14 @@
-module Data.Roman.Convert where
+module Data.Roman.Convert
+  ( symbolsTable
+  , symbols
+  , symbolValues
+  , toRoman
+  , fromRoman
+  , joinRoman
+  , splitRoman
+  , toSymbols
+  , fromSymbols
+  ) where
 
 import Prelude
 import Data.Array (cons, elem, foldl)

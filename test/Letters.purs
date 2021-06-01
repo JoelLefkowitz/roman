@@ -2,7 +2,7 @@ module Test.Letters where
 
 import Prelude
 import Data.Map (fromFoldable)
-import Data.Roman.Letters (LetterTriplet(..), letterTripletToSymbols, makeLetterTriplets)
+import Data.Roman.Letters (LetterTriplet(..), toSymbols, fromLetters)
 import Data.Roman.Symbols (SymbolsTable(..))
 import Data.Tuple (Tuple(..))
 import Effect (Effect)
@@ -10,39 +10,39 @@ import Test.Assert (assertEqual)
 
 testLetters :: Effect Unit
 testLetters = do
-  testMakeLetterTriplets
-  testLetterTripletToSymbols
+  testFromLetters
+  testToSymbols
 
-testMakeLetterTriplets :: Effect Unit
-testMakeLetterTriplets = do
+testFromLetters :: Effect Unit
+testFromLetters = do
   assertEqual
-    { actual: makeLetterTriplets []
+    { actual: fromLetters []
     , expected: []
     }
   assertEqual
-    { actual: makeLetterTriplets [ "I", "V" ]
+    { actual: fromLetters [ "I", "V" ]
     , expected: []
     }
   assertEqual
-    { actual: makeLetterTriplets [ "I", "V", "X" ]
+    { actual: fromLetters [ "I", "V", "X" ]
     , expected: [ LetterTriplet "I" "V" "X" 1 ]
     }
   assertEqual
-    { actual: makeLetterTriplets [ "I", "V", "X", "L" ]
+    { actual: fromLetters [ "I", "V", "X", "L" ]
     , expected: [ LetterTriplet "I" "V" "X" 1 ]
     }
   assertEqual
-    { actual: makeLetterTriplets [ "I", "V", "X", "L", "C" ]
+    { actual: fromLetters [ "I", "V", "X", "L", "C" ]
     , expected:
         [ LetterTriplet "I" "V" "X" 1
         , LetterTriplet "X" "L" "C" 10
         ]
     }
 
-testLetterTripletToSymbols :: Effect Unit
-testLetterTripletToSymbols = do
+testToSymbols :: Effect Unit
+testToSymbols = do
   assertEqual
-    { actual: letterTripletToSymbols $ LetterTriplet "I" "V" "X" 1
+    { actual: toSymbols $ LetterTriplet "I" "V" "X" 1
     , expected:
         SymbolsTable
           ( fromFoldable
@@ -55,7 +55,7 @@ testLetterTripletToSymbols = do
           )
     }
   assertEqual
-    { actual: letterTripletToSymbols $ LetterTriplet "X" "L" "C" 10
+    { actual: toSymbols $ LetterTriplet "X" "L" "C" 10
     , expected:
         SymbolsTable
           ( fromFoldable

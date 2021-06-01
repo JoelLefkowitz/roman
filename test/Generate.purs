@@ -2,7 +2,7 @@ module Test.Generate where
 
 import Prelude
 import Data.Map (empty, fromFoldable)
-import Data.Roman.Generate (generateSymbolsTable)
+import Data.Roman.Generate (generateSymbols)
 import Data.Roman.Symbols (SymbolsTable(..))
 import Data.Tuple (Tuple(..))
 import Effect (Effect)
@@ -10,16 +10,16 @@ import Test.Assert (assertEqual)
 
 testGenerate :: Effect Unit
 testGenerate = do
-  testGenerateSymbolsTable
+  testGenerateSymbols
 
-testGenerateSymbolsTable :: Effect Unit
-testGenerateSymbolsTable = do
+testGenerateSymbols :: Effect Unit
+testGenerateSymbols = do
   assertEqual
-    { actual: generateSymbolsTable []
+    { actual: generateSymbols []
     , expected: SymbolsTable empty
     }
   assertEqual
-    { actual: generateSymbolsTable [ "I", "V", "X", "L", "C", "D", "M", "V*", "X*" ]
+    { actual: generateSymbols [ "I", "V", "X", "L", "C", "D", "M", "V*", "X*" ]
     , expected:
         SymbolsTable
           ( fromFoldable

@@ -1,4 +1,4 @@
-module Data.Roman.Letters where
+module Data.Roman.Letters (LetterTriplet(..), fromLetters, toSymbols) where
 
 import Prelude
 import Data.Array (index, length, range)
@@ -35,8 +35,8 @@ instance showLetterTriplet :: Show LetterTriplet where
         , Tuple "Magnitude" (showWithoutQuotes m)
         ]
 
-makeLetterTriplets :: Array String -> Array LetterTriplet
-makeLetterTriplets letters
+fromLetters :: Array String -> Array LetterTriplet
+fromLetters letters
   | length letters < 3 = []
   | otherwise = do
     i <- 0 .. ((length letters - 3) / 2)
@@ -49,8 +49,8 @@ makeLetterTriplets letters
     where
     get arr x = fromMaybe "" $ index arr x
 
-letterTripletToSymbols :: LetterTriplet -> SymbolsTable
-letterTripletToSymbols (LetterTriplet o f t m) =
+toSymbols :: LetterTriplet -> SymbolsTable
+toSymbols (LetterTriplet o f t m) =
   SymbolsTable
     ( fromFoldable
         [ Tuple o (1 * m)
