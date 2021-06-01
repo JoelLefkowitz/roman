@@ -5,12 +5,15 @@ dist: xenial
 node_js: 14.8.0
     
 before_install:
-  
+
     # Install PureScript from its binary
     - sudo apt-get install libncurses5
     - curl -L https://github.com/purescript/purescript/releases/download/v0.14.1/linux64.tar.gz --output linux64.tar.gz
     - tar -xzf linux64.tar.gz purescript/purs --strip-components=1
     - sudo mv purs /usr/local/bin/purs
+    
+    - purs --version
+    - alias purs=/usr/local/bin/purs
     
     # Global npm executables needed to run build stages
     - npm install -g spago
@@ -18,6 +21,7 @@ before_install:
     
     # Make dev dependencies available for all build stages
     - npm install
+
 
 cache:
     - npm
