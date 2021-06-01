@@ -5,10 +5,10 @@ dist: xenial
 node_js: 14.8.0
     
 before_install:
-    - sudo apt-get install haskell-stack
+    - sudo apt-get install libncurses5
     - npm install -g spago
     - npm install -g grunt-cli
-    - npm install -g purescript --unsafe-perm=true
+    - npm install -g purescript
     - npm install
 
 cache:
