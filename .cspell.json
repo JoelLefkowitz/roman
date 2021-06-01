@@ -3,7 +3,6 @@
     "ignorePaths": [
         "./.cspell.txt",
         "./package-lock.json",
-        "./test/numerals.csv",
         ".gitignore",
         "*.coverage",
         "*.types",
@@ -14,7 +13,7 @@
         "**/node_modules/**",
         "**/output/**",
         "**/sqlite3",
-        "**/spago/**",
+        "**/.spago/**",
         "**/venv/**"
     ],
     "dictionaries": [
