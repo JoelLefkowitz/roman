@@ -5,6 +5,7 @@ dist: xenial
 node_js: 14.8.0
 
 before_install:
+    - curl -sSL https://get.haskellstack.org/ | sh
     - npm install -g purescript --unsafe-perm=true
     - npm install -g spago
     - npm install -g grunt-cli
