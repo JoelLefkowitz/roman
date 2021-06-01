@@ -15,12 +15,11 @@ before_install:
     - tar -xzf linux64.tar.gz --strip-components=1
     
     # - tar -xzf linux64.tar.gz purescript/purs --strip-components=1
-    
-
+  
     - stack update
     - stack unpack purescript
     - cd purescript-0.14.1  
-    - stack install --flag purescript:RELEASE
+    - stack install --flag purescript:0.14.1
     
     # - sudo mv purs /usr/local/bin/purs
     
