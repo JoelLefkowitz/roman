@@ -3,8 +3,7 @@ module.exports = function (grunt) {
         exec: {
             cspell: 'npx cspell ".*" "*" "**/*"',
             purty: 'for i in src test; do npx purty ./$i --write; done',
-            nyc:
-                'nyc --clean -x ".spago/**" -x "**/foreign.js" -e ".purs" spago test --purs-args "-g sourcemaps"',
+            nyc: 'nyc --clean -x ".spago/**" -x "**/foreign.js" -e ".purs" spago test --purs-args "-g sourcemaps"',
             prettier: 'prettier . --write --ignore-path .gitignore',
             quickdocs: 'quickdocs .quickdocs.yml',
             remark: 'npx remark -r .remarkrc .',
