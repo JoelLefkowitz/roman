@@ -6,9 +6,11 @@ node_js: 14.8.0
     
 before_install:
     - sudo apt-get install libncurses5
+    - curl -L https://github.com/purescript/purescript/releases/download/v0.14.1/linux64.tar.gz --output linux64.tar.gz
+    - tar -xzf linux64.tar.gz puresceript/purs --strip-components=1
+    - mv purs /usr/local/bin/purs
     - npm install -g spago
     - npm install -g grunt-cli
-    - npm install -g purescript
     - npm install
 
 cache:
