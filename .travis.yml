@@ -3,13 +3,9 @@ language: node_js
 os: linux
 dist: xenial
 node_js: 14.8.0
-
-addons:
-  apt:
-    packages:
-      - haskell-stack
     
 before_install:
+    - apt-get install haskell-stack
     - npm install -g spago
     - npm install -g grunt-cli
     - npm install -g purescript --unsafe-perm=true
