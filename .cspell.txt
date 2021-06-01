@@ -231,6 +231,7 @@ lefkowitz
 legacy
 lgpl
 libffi
+libncurses
 libreoffice
 license
 lightroom
