@@ -1,4 +1,6 @@
 { name = "roman"
+, license = "MIT"
+, repository = "https://github.com/JoelLefkowitz/purescript-roman.git"
 , dependencies =
   [ "assert"
   , "array-search"
