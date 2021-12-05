@@ -13,7 +13,7 @@ render_context:
   project:
     name: purescript-roman
     description: Convert between Roman numerals and base 10.
-    version: 0.2.0
+    version: 0.2.1
     verbose_name: PureScript Roman
     repository: https://github.com/JoelLefkowitz/purescript-roman
     codacy_id: ec61f81349714facb1a2d53d317c77d6
