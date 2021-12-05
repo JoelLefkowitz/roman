@@ -7,7 +7,6 @@ module Data.Roman.Symbols
   ) where
 
 import Prelude
-
 import Data.Map (Map, lookup, empty, union)
 import Data.Map.Eager (keys, values, reverseLookup)
 import Data.Maybe (Maybe)
@@ -21,7 +20,7 @@ instance eqSymbolsTable :: Eq SymbolsTable where
   eq (SymbolsTable x) (SymbolsTable y) = eq x y
 
 instance showSymbolsTable :: Show SymbolsTable where
-  show (SymbolsTable x) = fmtShow "["  ", " x "]"
+  show (SymbolsTable x) = fmtShow "[" ", " x "]"
 
 instance monoidSymbolsTable :: Monoid SymbolsTable where
   mempty = SymbolsTable empty

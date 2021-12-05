@@ -1,0 +1,33 @@
+{
+  "name": "purescript-roman",
+  "version": "0.2.0",
+  "description": "Convert between Roman numerals and base 10.",
+  "homepage": "https://github.com/JoelLefkowitz/purescript-roman",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JoelLefkowitz/purescript-roman"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "test",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-array-search": "joellefkowitz/purescript-array-search#0.3.0",
+    "purescript-maps-eager": "joellefkowitz/purescript-maps-eager#0.3.0",
+    "purescript-ordered-collections": "^2.0.2",
+    "purescript-prelude": "^5.0.1",
+    "purescript-repr": "joellefkowitz/purescript-repr#0.3.0",
+    "purescript-stringutils": "^0.0.11"
+  },
+  "devDependencies": {
+    "purescript-assert": "^5.0.0",
+    "purescript-debug": "^5.0.0",
+    "purescript-psci-support": "^5.0.0"
+  }
+}

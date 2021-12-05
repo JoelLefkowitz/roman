@@ -1,20 +1,15 @@
-{ name = "roman"
+{ name = "purescript-roman"
+, version = "0.2.0"
+, repository = "https://github.com/JoelLefkowitz/purescript-roman"
 , license = "MIT"
-, repository = "https://github.com/JoelLefkowitz/purescript-roman.git"
-, dependencies =
-  [ "assert"
-  , "array-search"
-  , "console"
-  , "debug"
-  , "effect"
-  , "maps-eager"
-  , "node-fs"
-  , "ordered-collections"
-  , "psci-support"
-  , "repr"
-  , "strings"
-  , "stringutils"
-  ]
+, dependencies = 
+    [ "array-search"
+    , "maps-eager"
+    , "ordered-collections"
+    , "prelude"
+    , "repr"
+    , "stringutils"
+    ]
 , packages = ./packages.dhall
-, sources = [ "src/**/*.purs", "test/**/*.purs" ]
+, sources = [ "src/**/*.purs" ]
 }
