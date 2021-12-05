@@ -22,7 +22,7 @@
     "purescript-maps-eager": "joellefkowitz/purescript-maps-eager#0.3.0",
     "purescript-ordered-collections": "^2.0.2",
     "purescript-prelude": "^5.0.1",
-    "purescript-repr": "joellefkowitz/purescript-repr#0.3.0",
+    "purescript-repr": "joellefkowitz/purescript-repr#0.3.1",
     "purescript-stringutils": "^0.0.11"
   },
   "devDependencies": {
