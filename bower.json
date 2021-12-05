@@ -28,6 +28,7 @@
   "devDependencies": {
     "purescript-assert": "^5.0.0",
     "purescript-debug": "^5.0.0",
-    "purescript-psci-support": "^5.0.0"
+    "purescript-psci-support": "^5.0.0",
+    "purescript-node-fs": "^6.1.0"
   }
 }
