@@ -1,12 +1,12 @@
 {
-  "name": "purescript-roman",
-  "version": "0.2.1",
+  "name": "roman",
   "description": "Convert between Roman numerals and base 10.",
-  "homepage": "https://github.com/JoelLefkowitz/purescript-roman",
+  "version": "0.2.1",
+  "homepage": "https://github.com/JoelLefkowitz/roman",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JoelLefkowitz/purescript-roman"
+    "url": "https://github.com/JoelLefkowitz/roman"
   },
   "ignore": [
     "**/.*",

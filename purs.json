@@ -1,0 +1,18 @@
+{
+  "name": "roman",
+  "description": "Convert between Roman numerals and base 10.",
+  "version": "0.2.1",
+  "license": "MIT",
+  "location": {
+    "githubOwner": "joellefkowitz",
+    "githubRepo": "roman"
+  },
+  "dependencies": {
+    "array-search": "joellefkowitz/array-search#0.3.1",
+    "maps-eager": "joellefkowitz/maps-eager#0.3.1",
+    "ordered-collections": "^2.0.2",
+    "prelude": "^5.0.1",
+    "repr": "joellefkowitz/repr#0.3.1",
+    "stringutils": "^0.0.11"
+  }
+}
