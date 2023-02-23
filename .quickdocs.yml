@@ -1,7 +1,0 @@
-project: purescript-roman
-version: 0.2.1
-author: Joel Lefkowitz
-verbose_name: PureScript Roman
-html_title: PureScript Roman
-github_url: https://github.com/JoelLefkowitz/purescript-roman
-apidoc_module_dir: src
