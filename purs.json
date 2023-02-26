@@ -1,7 +1,7 @@
 {
   "name": "roman",
   "description": "Convert between Roman numerals and base 10.",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "license": "MIT",
   "owner": {
     "email": "joel@Joels-MacBook.local",
