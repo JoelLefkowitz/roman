@@ -1,23 +1,22 @@
 module Data.Roman.Convert
-  ( symbolsTable
-  , symbols
-  , symbolValues
-  , toRoman
-  , fromRoman
+  ( fromRoman
+  , fromSymbols
   , joinRoman
   , splitRoman
-  , toSymbols
-  , fromSymbols
+  , symbolValues
+  , symbols
+  , symbolsTable
+  , toRoman
   ) where
 
 import Prelude
-import Data.Array (cons, elem, foldl)
+import Data.Array (cons, elem, find, foldl, reverse)
 import Data.Map (fromFoldable)
 import Data.Maybe (fromMaybe', fromMaybe)
 import Data.Roman.Symbols (SymbolsTable(..), getSymbols, getSymbolValues, lookupSymbol, reverseLookupSymbol)
 import Data.String.Utils (startsWith)
 import Data.Tuple (Tuple(..))
-import Data.Array.Search (largestLessThan, finalSatisfying)
+import Data.Array.Search (largestBelow)
 import Data.String.Repr (trimStart)
 
 symbolsTable :: SymbolsTable
@@ -60,7 +59,7 @@ splitRoman x
   | elem x symbols = [ x ]
   | otherwise = cons chunk (splitRoman remainder)
     where
-    chunk = fromMaybe "" $ finalSatisfying symbols (\s -> startsWith s x)
+    chunk = fromMaybe "" $ find (\s -> startsWith s x) (reverse symbols)
 
     remainder = trimStart chunk x
 
@@ -69,7 +68,7 @@ toSymbols x
   | elem x symbolValues = [ x ]
   | otherwise = cons chunk (toSymbols remainder)
     where
-    chunk = fromMaybe 0 (largestLessThan symbolValues x)
+    chunk = fromMaybe 0 (largestBelow x symbolValues)
 
     remainder = x - chunk
 
