@@ -1,7 +1,7 @@
 {
   "name": "roman",
   "description": "Convert between Roman numerals and base 10.",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "homepage": "https://github.com/JoelLefkowitz/roman",
   "license": "MIT",
   "repository": {
