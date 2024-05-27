@@ -27,7 +27,6 @@
     "repr",
     "spago",
     "stringutils",
-    "trufflehog",
-    "unfoldable"
+    "trufflehog"
   ]
 }

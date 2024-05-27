@@ -6,7 +6,7 @@ Convert between Roman numerals and base 10.
 ![Version](https://pursuit.purescript.org/packages/purescript-roman/badge)
 ![Quality](https://img.shields.io/codacy/grade/ec61f81349714facb1a2d53d317c77d6)
 
-## Installation
+## Installing
 
 ```bash
 spago install roman
