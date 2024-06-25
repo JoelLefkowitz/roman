@@ -19,14 +19,14 @@ package:
     - array-search: ">=0.0.0 <1.0.0"
     - arrays: ">=6.0.0 <7.0.0"
     - foldable-traversable: ">=6.0.0 <7.0.0"
-    - integers: ">=6.0.0 <7.0.0"
+    - integers: ">=5.0.0 <6.0.0"
     - maps-eager: ">=0.0.0 <1.0.0"
     - maybe: ">=6.0.0 <7.0.0"
     - ordered-collections: ">=2.0.2 <3.0.0"
-    - prelude: ">=5.0.1 <6.0.0"
+    - prelude: ">=6.0.1 <7.0.0"
     - repr: ">=0.4.0 <1.0.0"
     - stringutils: ">=0.0.11 <1.0.0"
-    - tuples: ">=6.0.0 <7.0.0"
+    - tuples: ">=6.0.1 <7.0.0"
 
   build:
     pedanticPackages: true
