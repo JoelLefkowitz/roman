@@ -10,14 +10,16 @@ module Data.Roman.Convert
   ) where
 
 import Prelude
+
 import Data.Array (cons, elem, find, foldl, reverse)
+import Data.Array.Search (largestBelow)
 import Data.Map (fromFoldable)
 import Data.Maybe (fromMaybe', fromMaybe)
 import Data.Roman.Symbols (SymbolsTable(..), getSymbols, getSymbolValues, lookupSymbol, reverseLookupSymbol)
+import Data.String (length)
+import Data.String.CodeUnits (slice)
 import Data.String.Utils (startsWith)
 import Data.Tuple (Tuple(..))
-import Data.Array.Search (largestBelow)
-import Data.String.Repr (trimStart)
 
 symbolsTable :: SymbolsTable
 symbolsTable =
@@ -61,7 +63,7 @@ splitRoman x
     where
     chunk = fromMaybe "" $ find (\s -> startsWith s x) (reverse symbols)
 
-    remainder = trimStart chunk x
+    remainder = slice (length chunk) (length x) x
 
 toSymbols :: Int -> Array Int
 toSymbols x

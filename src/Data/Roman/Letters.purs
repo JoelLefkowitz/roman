@@ -7,7 +7,6 @@ import Data.Int (pow)
 import Data.Map (fromFoldable)
 import Data.Maybe (fromMaybe)
 import Data.Roman.Symbols (SymbolsTable(..))
-import Data.String.Repr (fmtShow, showWithoutQuotes)
 import Data.Tuple (Tuple(..))
 
 infix 8 range as ..
@@ -25,15 +24,14 @@ instance eqLetterTriplet :: Eq LetterTriplet where
       ]
 
 instance showLetterTriplet :: Show LetterTriplet where
-  show (LetterTriplet o f t m) = fmtShow "[" ", " fields "]"
-    where
-    fields =
-      fromFoldable
-        [ Tuple "Units" o
-        , Tuple "Fives" f
-        , Tuple "Tens" t
-        , Tuple "Magnitude" (showWithoutQuotes m)
-        ]
+  show (LetterTriplet o f t m) =
+    show
+      $ fromFoldable
+          [ Tuple "Units" o
+          , Tuple "Fives" f
+          , Tuple "Tens" t
+          , Tuple "Magnitude" $ show m
+          ]
 
 fromLetters :: Array String -> Array LetterTriplet
 fromLetters letters
