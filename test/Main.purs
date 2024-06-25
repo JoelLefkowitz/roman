@@ -2,14 +2,14 @@ module Test.Main where
 
 import Prelude
 import Effect (Effect)
-import Test.Convert (testConvert)
-import Test.Generate (testGenerate)
-import Test.Symbols (testSymbols)
-import Test.Letters (testLetters)
+import Test.Data.Roman.Convert (testConvert)
+import Test.Data.Roman.Generate (testGenerate)
+import Test.Data.Roman.Letters (testLetters)
+import Test.Data.Roman.Symbols (testSymbols)
 
 main :: Effect Unit
 main = do
-  testSymbols
   testConvert
-  testLetters
   testGenerate
+  testLetters
+  testSymbols

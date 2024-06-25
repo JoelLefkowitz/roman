@@ -1,19 +1,14 @@
-module Test.Symbols where
+module Test.Data.Roman.Symbols where
 
 import Prelude
+
 import Data.Map (fromFoldable)
 import Data.Maybe (Maybe(..))
 import Data.Roman.Symbols (getSymbols, getSymbolValues, lookupSymbol, reverseLookupSymbol, SymbolsTable(..))
 import Data.Tuple (Tuple(..))
 import Effect (Effect)
+import Prim as Test.Data.Roman
 import Test.Assert (assertEqual)
-
-testSymbols :: Effect Unit
-testSymbols = do
-  testGetSymbols
-  testGetSymbolValues
-  testLookupSymbol
-  testReverseLookupSymbol
 
 symbolsTableFixture :: SymbolsTable
 symbolsTableFixture =
@@ -25,22 +20,16 @@ symbolsTableFixture =
         ]
     )
 
-testGetSymbols :: Effect Unit
-testGetSymbols =
+testSymbols :: Effect Unit
+testSymbols = do
   assertEqual
     { actual: getSymbols symbolsTableFixture
     , expected: [ "a", "b", "c" ]
     }
-
-testGetSymbolValues :: Effect Unit
-testGetSymbolValues =
   assertEqual
     { actual: getSymbolValues symbolsTableFixture
     , expected: [ 1, 2, 3 ]
     }
-
-testLookupSymbol :: Effect Unit
-testLookupSymbol = do
   assertEqual
     { actual: lookupSymbol "a" symbolsTableFixture
     , expected: Just 1
@@ -49,9 +38,6 @@ testLookupSymbol = do
     { actual: lookupSymbol "d" symbolsTableFixture
     , expected: Nothing
     }
-
-testReverseLookupSymbol :: Effect Unit
-testReverseLookupSymbol = do
   assertEqual
     { actual: reverseLookupSymbol 1 symbolsTableFixture
     , expected: Just "a"

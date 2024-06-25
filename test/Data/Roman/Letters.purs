@@ -1,4 +1,4 @@
-module Test.Letters where
+module Test.Data.Roman.Letters where
 
 import Prelude
 import Data.Map (fromFoldable)
@@ -10,11 +10,6 @@ import Test.Assert (assertEqual)
 
 testLetters :: Effect Unit
 testLetters = do
-  testFromLetters
-  testToSymbols
-
-testFromLetters :: Effect Unit
-testFromLetters = do
   assertEqual
     { actual: fromLetters []
     , expected: []
@@ -38,9 +33,6 @@ testFromLetters = do
         , LetterTriplet "X" "L" "C" 10
         ]
     }
-
-testToSymbols :: Effect Unit
-testToSymbols = do
   assertEqual
     { actual: toSymbols $ LetterTriplet "I" "V" "X" 1
     , expected:

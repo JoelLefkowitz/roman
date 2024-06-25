@@ -14,7 +14,7 @@ spago install roman
 
 ## Documentation
 
-Documentation and more detailed examples are hosted on [Github Pages](https://joellefkowitz.github.io/roman).
+Documentation and more detailed examples are hosted on [Pursuit](https://pursuit.purescript.org/packages/purescript-roman).
 
 ## Usage
 
@@ -116,7 +116,7 @@ yarn spago docs
 To run linters:
 
 ```bash
-npm run lint
+yarn lint
 ```
 
 ### Formatters
@@ -124,7 +124,7 @@ npm run lint
 To run formatters:
 
 ```bash
-npm run format
+yarn format
 ```
 
 ## Contributing

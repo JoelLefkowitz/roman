@@ -1,4 +1,4 @@
-module Test.Generate where
+module Test.Data.Roman.Generate where
 
 import Prelude
 import Data.Map (empty, fromFoldable)
@@ -10,10 +10,6 @@ import Test.Assert (assertEqual)
 
 testGenerate :: Effect Unit
 testGenerate = do
-  testGenerateSymbols
-
-testGenerateSymbols :: Effect Unit
-testGenerateSymbols = do
   assertEqual
     { actual: generateSymbols []
     , expected: SymbolsTable empty
