@@ -1,6 +1,7 @@
 module Test.Data.Roman.Generate where
 
 import Prelude
+
 import Data.Map (empty, fromFoldable)
 import Data.Roman.Generate (generateSymbols)
 import Data.Roman.Symbols (SymbolsTable(..))
@@ -8,7 +9,7 @@ import Data.Tuple (Tuple(..))
 import Effect (Effect)
 import Test.Assert (assertEqual)
 
-testGenerate :: Effect Unit
+testGenerate ∷ Effect Unit
 testGenerate = do
   assertEqual
     { actual: generateSymbols []

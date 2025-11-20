@@ -1,12 +1,6 @@
 package:
   name: roman
   description: Convert between Roman numerals and base 10.
-  repository: https://github.com/JoelLefkowitz/roman
-  homepage: https://joellefkowitz.github.io/roman
-  keywords:
-    - roman
-    - numerals
-    - convert
 
   publish:
     version: 0.4.0
@@ -36,23 +30,10 @@ package:
     main: Test.Main
     dependencies:
       - assert
-      - debug
       - effect
       - node-buffer
       - node-fs
 
-metadata:
-  publisher: Pursuit
-  languages:
-    - PureScript
-
-  frameworks: []
-  paradigms:
-    - Functional
-
-  lifecycle: Alpha
-
 workspace:
   packageSet:
-    registry: 41.2.0
-
+    registry: 62.2.7

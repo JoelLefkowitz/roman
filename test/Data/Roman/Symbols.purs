@@ -4,13 +4,19 @@ import Prelude
 
 import Data.Map (fromFoldable)
 import Data.Maybe (Maybe(..))
-import Data.Roman.Symbols (getSymbols, getSymbolValues, lookupSymbol, reverseLookupSymbol, SymbolsTable(..))
+import Data.Roman.Symbols
+  ( SymbolsTable(..)
+  , getSymbolValues
+  , getSymbols
+  , lookupSymbol
+  , reverseLookupSymbol
+  )
 import Data.Tuple (Tuple(..))
 import Effect (Effect)
 import Prim as Test.Data.Roman
 import Test.Assert (assertEqual)
 
-symbolsTableFixture :: SymbolsTable
+symbolsTableFixture ∷ SymbolsTable
 symbolsTableFixture =
   SymbolsTable
     ( fromFoldable
@@ -20,7 +26,7 @@ symbolsTableFixture =
         ]
     )
 
-testSymbols :: Effect Unit
+testSymbols ∷ Effect Unit
 testSymbols = do
   assertEqual
     { actual: getSymbols symbolsTableFixture

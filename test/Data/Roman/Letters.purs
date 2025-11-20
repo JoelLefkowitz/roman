@@ -1,14 +1,15 @@
 module Test.Data.Roman.Letters where
 
 import Prelude
+
 import Data.Map (fromFoldable)
-import Data.Roman.Letters (LetterTriplet(..), toSymbols, fromLetters)
+import Data.Roman.Letters (LetterTriplet(..), fromLetters, toSymbols)
 import Data.Roman.Symbols (SymbolsTable(..))
 import Data.Tuple (Tuple(..))
 import Effect (Effect)
 import Test.Assert (assertEqual)
 
-testLetters :: Effect Unit
+testLetters ∷ Effect Unit
 testLetters = do
   assertEqual
     { actual: fromLetters []

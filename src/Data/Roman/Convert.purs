@@ -14,14 +14,20 @@ import Prelude
 import Data.Array (cons, elem, find, foldl, reverse)
 import Data.Array.Search (largestBelow)
 import Data.Map (fromFoldable)
-import Data.Maybe (fromMaybe', fromMaybe)
-import Data.Roman.Symbols (SymbolsTable(..), getSymbols, getSymbolValues, lookupSymbol, reverseLookupSymbol)
+import Data.Maybe (fromMaybe, fromMaybe')
+import Data.Roman.Symbols
+  ( SymbolsTable(..)
+  , getSymbolValues
+  , getSymbols
+  , lookupSymbol
+  , reverseLookupSymbol
+  )
 import Data.String (length)
 import Data.String.CodeUnits (slice)
 import Data.String.Utils (startsWith)
 import Data.Tuple (Tuple(..))
 
-symbolsTable :: SymbolsTable
+symbolsTable ∷ SymbolsTable
 symbolsTable =
   SymbolsTable
     ( fromFoldable
@@ -41,38 +47,40 @@ symbolsTable =
         ]
     )
 
-symbols :: Array String
+symbols ∷ Array String
 symbols = getSymbols symbolsTable
 
-symbolValues :: Array Int
+symbolValues ∷ Array Int
 symbolValues = getSymbolValues symbolsTable
 
-toRoman :: Int -> String
-toRoman x = fromMaybe' (\_ -> joinRoman $ toSymbols x) (reverseLookupSymbol x symbolsTable)
+toRoman ∷ Int → String
+toRoman x = fromMaybe' (\_ → joinRoman $ toSymbols x)
+  (reverseLookupSymbol x symbolsTable)
 
-fromRoman :: String -> Int
-fromRoman x = fromMaybe' (\_ -> fromSymbols $ splitRoman x) (lookupSymbol x symbolsTable)
+fromRoman ∷ String → Int
+fromRoman x = fromMaybe' (\_ → fromSymbols $ splitRoman x)
+  (lookupSymbol x symbolsTable)
 
-joinRoman :: Array Int -> String
-joinRoman = foldl (\acc x -> acc <> toRoman x) ""
+joinRoman ∷ Array Int → String
+joinRoman = foldl (\acc x → acc <> toRoman x) ""
 
-splitRoman :: String -> Array String
+splitRoman ∷ String → Array String
 splitRoman x
   | elem x symbols = [ x ]
   | otherwise = cons chunk (splitRoman remainder)
-    where
-    chunk = fromMaybe "" $ find (\s -> startsWith s x) (reverse symbols)
+      where
+      chunk = fromMaybe "" $ find (\s → startsWith s x) (reverse symbols)
 
-    remainder = slice (length chunk) (length x) x
+      remainder = slice (length chunk) (length x) x
 
-toSymbols :: Int -> Array Int
+toSymbols ∷ Int → Array Int
 toSymbols x
   | elem x symbolValues = [ x ]
   | otherwise = cons chunk (toSymbols remainder)
-    where
-    chunk = fromMaybe 0 (largestBelow x symbolValues)
+      where
+      chunk = fromMaybe 0 (largestBelow x symbolValues)
 
-    remainder = x - chunk
+      remainder = x - chunk
 
-fromSymbols :: Array String -> Int
-fromSymbols = foldl (\acc x -> acc + fromRoman x) 0
+fromSymbols ∷ Array String → Int
+fromSymbols = foldl (\acc x → acc + fromRoman x) 0
